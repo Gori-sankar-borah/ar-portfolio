@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Markerless AR Portfolio</title>
+    <!-- We only need A-Frame now. It has built-in WebXR for markerless AR -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <!-- We hide the VR button and only show the AR button -->
+    <a-scene xr-mode-ui="XRMode: ar">
+
+        <!-- 
+        THE WRAPPER:
+        Position Z is -2. This means it will float 2 meters directly 
+        in front of the user the moment they open the camera!
+        Position Y is 1.5 (about eye-level in meters).
+      -->
+        <a-entity position="0 1.5 -2">
+
+            <!-- ============================================== -->
+            <!-- CENTER PANEL: GITHUB (Manually Designed)       -->
+            <!-- ============================================== -->
+            <a-plane position="0 0 0" width="1" height="1.5" color="#24292e"
+                material="opacity: 0.9; transparent: true; side: double">
+
+                <!-- GitHub Title -->
+                <a-text value="GitHub Profile" align="center" position="0 0.6 0.01" width="3" color="white"></a-text>
+
+                <!-- A separating line -->
+                <a-plane position="0 0.45 0.01" width="0.8" height="0.01" color="white"></a-plane>
+
+                <!-- Manually typed stats/text -->
+                <a-text value="User: @YourUsername\n\nRepositories: 24\n\nStars: 104" align="left"
+                    position="-0.4 0.2 0.01" width="2" color="#c9d1d9"></a-text>
+
+                <!-- Fake "Button" design -->
+                <a-plane position="0 -0.5 0.02" width="0.6" height="0.2" color="#2ea043">
+                    <a-text value="View Code" align="center" position="0 0 0.01" width="2" color="white"></a-text>
+                </a-plane>
+            </a-plane>
+
+            <!-- ============================================== -->
+            <!-- LEFT PANEL: PUBLICATIONS (Manually Designed)   -->
+            <!-- ============================================== -->
+            <!-- Positioned 1.2 meters to the left (-1.2) -->
+            <a-plane position="-1.2 0 0" width="1" height="1.5" color="#0d1117"
+                material="opacity: 0.9; transparent: true; side: double">
+                <a-text value="Publications" align="center" position="0 0.6 0.01" width="3" color="#58a6ff"></a-text>
+                <a-plane position="0 0.45 0.01" width="0.8" height="0.01" color="#58a6ff"></a-plane>
+                <a-text value="- Paper Title 1\n  (IEEE 2023)\n\n- Paper Title 2\n  (Nature 2024)" align="left"
+                    position="-0.4 0.1 0.01" width="1.8" color="white"></a-text>
+            </a-plane>
+
+            <!-- ============================================== -->
+            <!-- RIGHT PANEL: PROJECTS (Manually Designed)      -->
+            <!-- ============================================== -->
+            <!-- Positioned 1.2 meters to the right (1.2) -->
+            <a-plane position="1.2 0 0" width="1" height="1.5" color="#0d1117"
+                material="opacity: 0.9; transparent: true; side: double">
+                <a-text value="Projects" align="center" position="0 0.6 0.01" width="3" color="#58a6ff"></a-text>
+                <a-plane position="0 0.45 0.01" width="0.8" height="0.01" color="#58a6ff"></a-plane>
+                <a-text value="1. WebAR Portfolio\n\n2. Machine Learning Bot\n\n3. Crypto Tracker" align="left"
+                    position="-0.4 0.1 0.01" width="1.8" color="white"></a-text>
+            </a-plane>
+
+        </a-entity>
+
+        <!-- Add the camera so the user can look around -->
+        <a-camera></a-camera>
+    </a-scene>
+</body>
+
+</html>
